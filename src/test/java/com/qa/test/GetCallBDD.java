@@ -1,13 +1,24 @@
 package com.qa.test;
 
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 public class GetCallBDD {
-	
-	//new code will be added
-	@BeforeTest
-	public static void initialize() {
-		//code will be added once whole web services are available 
+
+	@Test
+	public void testNumberOfCircuits_2017() {
+//		given().
+//		when().
+//		then().
+//		assert().
+		
+		given().
+		
+		when().get("https://ergast.com/api/f1/2018/circuits.json").
+		
+		then().assertThat().body("MRDate.limit", hasSize(30));	
+				
 	}
 
 }
