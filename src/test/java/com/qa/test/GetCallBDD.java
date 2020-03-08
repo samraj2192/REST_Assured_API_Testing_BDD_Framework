@@ -17,7 +17,15 @@ public class GetCallBDD {
 		
 		when().get("https://ergast.com/api/f1/2018/circuits.json").
 		
-		then().assertThat().body("MRDate.limit", hasSize(30));	
+		then().
+		
+		assertThat().
+		
+		body("MRData.CircuitTable.Circuits.circuitId", hasSize(21)).
+		
+		and().
+		
+		header("Content-Length", equalTo("4739"));
 				
 	}
 
